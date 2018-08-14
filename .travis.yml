@@ -22,7 +22,8 @@ install:
 
 stages:
   - test
-  - check
+  - name: check
+    if: branch !~ /^stable-.*$/
   - name: deploy
     if: branch =~ /^stable-.*$/
 
